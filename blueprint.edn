@@ -1,0 +1,11 @@
+{:itonami.blueprint/id "cloud-itonami-8890"
+ :itonami.blueprint/name "Other social work activities without accommodation"
+ :itonami.blueprint/isic-rev5 "8890"
+ :itonami.blueprint/domain :health/social-work-non-residential
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:care-quality :data-sovereignty :transparency]
+ :itonami.blueprint/governor :social-services-governor
+ :itonami.blueprint/required-technologies [:robotics :identity :forms :dmn :bpmn :audit-ledger]
+ :itonami.blueprint/optional-technologies []
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/robotics true}
