@@ -2,7 +2,7 @@
 
 ## Classification
 
-- Repository: `cloud-itonami-8890`
+- Repository: `cloud-itonami-isic-8890`
 - ISIC Rev.5: `8890`
 - Activity: other social work activities without accommodation not elsewhere classified (e.g. counseling, welfare/benefit-eligibility casework, community-outreach services)
 - Social impact: care quality, data sovereignty, transparent audit

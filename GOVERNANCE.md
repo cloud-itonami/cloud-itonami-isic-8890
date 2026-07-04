@@ -1,6 +1,6 @@
 # Governance
 
-`cloud-itonami-8890` is an OSS open-business blueprint for other social work activities without accommodation not elsewhere classified (e.g. counseling, welfare/benefit-eligibility casework, community-outreach services).
+`cloud-itonami-isic-8890` is an OSS open-business blueprint for other social work activities without accommodation not elsewhere classified (e.g. counseling, welfare/benefit-eligibility casework, community-outreach services).
 Governance covers both the capability layer and the operator model.
 
 ## Maintainers

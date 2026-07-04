@@ -1,4 +1,4 @@
-# cloud-itonami-8890
+# cloud-itonami-isic-8890
 
 Open Business Blueprint for **ISIC Rev.5 8890**: Other social work activities without accommodation.
 

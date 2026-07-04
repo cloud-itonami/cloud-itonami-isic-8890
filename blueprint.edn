@@ -1,4 +1,4 @@
-{:itonami.blueprint/id "cloud-itonami-8890"
+{:itonami.blueprint/id "cloud-itonami-isic-8890"
  :itonami.blueprint/name "Other social work activities without accommodation"
  :itonami.blueprint/isic-rev5 "8890"
  :itonami.blueprint/domain :health/social-work-non-residential
