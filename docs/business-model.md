@@ -30,8 +30,15 @@
 
 ## Trust Controls
 
-- no eligibility determination or referral is finalized without human sign-off
-- a fabricated assessment forces a hold, not an override
-- every case path is auditable
+- no eligibility determination or referral is finalized without human
+  sign-off (a caseworker)
+- a fabricated jurisdiction citation, incomplete casework evidence, an
+  unsatisfied eligibility criterion, or an unresolved risk (fraud/
+  misrepresentation) flag -- each forces a hold, not an override
+- a case's eligibility determination/referral cannot each be finalized
+  twice: a double-finalization attempt is held off this actor's own
+  case facts alone, with no upstream comparison needed
+- every intake, assessment, screening and finalization path is
+  auditable
 - client data stays outside Git
 - emergency manual override paths remain outside LLM control
