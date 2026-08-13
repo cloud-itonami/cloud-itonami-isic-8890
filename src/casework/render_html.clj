@@ -316,11 +316,6 @@
 
 (defn- muted [s] (str "<span class=\"muted\">" s "</span>"))
 
-(defn- set-cell [s]
-  (if (seq s)
-    (str/join ", " (map esc (sort s)))
-    (muted "—")))
-
 (defn- yn [b yes no]
   (if b
     (str "<span class=\"ok\">" yes "</span>")
