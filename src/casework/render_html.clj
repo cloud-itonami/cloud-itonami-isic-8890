@@ -47,7 +47,7 @@
   would silently promote every human rejection into the governor-refusal
   count, and the page would claim refusals the censor never made."
   (:require [jp-go-dds.skin]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [casework.facts :as facts]
             [casework.phase :as phase]
             [casework.governor :as governor]
