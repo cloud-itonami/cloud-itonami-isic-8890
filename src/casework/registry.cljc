@@ -30,7 +30,7 @@
   `:eligibility/finalize`/`:referral/finalize`, always human-gated --
   see README `Actuation`)."
   (:require [clojure.set :as set]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (defn- unsigned-certificate
   "Every certificate this actor produces is UNSIGNED -- signature is the
@@ -75,7 +75,7 @@
     (throw (ex-info "eligibility-determination: jurisdiction required" {})))
   (when (< sequence 0)
     (throw (ex-info "eligibility-determination: sequence must be >= 0" {})))
-  (let [determination-number (str (str/upper-case jurisdiction) "-ELG-" (zero-pad sequence 6))
+  (let [determination-number (str (str/upper jurisdiction) "-ELG-" (zero-pad sequence 6))
         record {"record_id" determination-number
                 "kind" "eligibility-determination-draft"
                 "case_id" case-id
@@ -99,7 +99,7 @@
     (throw (ex-info "referral: jurisdiction required" {})))
   (when (< sequence 0)
     (throw (ex-info "referral: sequence must be >= 0" {})))
-  (let [referral-number (str (str/upper-case jurisdiction) "-REF-" (zero-pad sequence 6))
+  (let [referral-number (str (str/upper jurisdiction) "-REF-" (zero-pad sequence 6))
         record {"record_id" referral-number
                 "kind" "referral-draft"
                 "case_id" case-id
