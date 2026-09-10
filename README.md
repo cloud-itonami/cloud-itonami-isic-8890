@@ -87,7 +87,7 @@ layers enforce this (`casework.governor`'s `:actuation/finalize-
 eligibility`/`:actuation/finalize-referral` high-stakes gate and
 `casework.phase`'s phase table, which never puts `:eligibility/
 finalize`/`:referral/finalize` in any phase's `:auto` set) -- see
-`casework.phase`'s docstring and `test/casework/phase_test.clj`'s
+`casework.phase`'s docstring and `test/casework/phase_test.kotoba`'s
 `eligibility-finalize-never-auto-at-any-phase`/`referral-finalize-
 never-auto-at-any-phase`. The actor may draft, check and recommend; a
 human caseworker is always the one who actually finalizes an
@@ -172,14 +172,14 @@ reference at all.
 
 | File | Role |
 |---|---|
-| `src/casework/store.cljc` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db`) + append-only audit ledger + separate eligibility-determination/referral history. No dynamically-filed sub-record -- both actuation ops act directly on a pre-seeded case, and the double-finalization guards check dedicated `:eligibility-finalized?`/`:referral-finalized?` booleans rather than a `:status` value |
-| `src/casework/registry.cljc` | Eligibility-determination + referral draft records, plus `eligibility-criteria-unsatisfied?` -- reuses `registrar.registry/prerequisites-satisfied?`'s SET-CONTAINMENT/subset shape (the FIRST universal 'every required item is satisfied' test in this fleet) for a SECOND domain |
-| `src/casework/facts.cljc` | Per-jurisdiction welfare-eligibility/social-work catalog with an official spec-basis citation per entry, honest coverage reporting |
-| `src/casework/caseworkopsllm.cljc` | **CaseworkOps-LLM Advisor** -- `mock-advisor` ‖ `llm-advisor`; intake/assessment/risk-screening/eligibility-determination/referral proposals |
-| `src/casework/governor.cljc` | **Social Services Governor** -- 4 HARD checks (spec-basis · evidence-incomplete · eligibility-criteria-unsatisfied, pure ground-truth set-containment recompute · risk-flag-unresolved, unconditional evaluation, the FIFTEENTH grounding of this discipline) + already-eligibility-finalized/already-referral-finalized guards + 1 soft (confidence/actuation gate) |
-| `src/casework/phase.cljc` | **Phase 0→3** -- read-only → assisted intake → assisted assess → supervised (both finalizations always human; case intake is the ONLY auto-eligible op, no direct capital risk) |
-| `src/casework/operation.cljc` | **OperationActor** -- langgraph-clj StateGraph |
-| `src/casework/sim.cljc` | demo driver |
+| `src/casework/store.kotoba` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db`) + append-only audit ledger + separate eligibility-determination/referral history. No dynamically-filed sub-record -- both actuation ops act directly on a pre-seeded case, and the double-finalization guards check dedicated `:eligibility-finalized?`/`:referral-finalized?` booleans rather than a `:status` value |
+| `src/casework/registry.kotoba` | Eligibility-determination + referral draft records, plus `eligibility-criteria-unsatisfied?` -- reuses `registrar.registry/prerequisites-satisfied?`'s SET-CONTAINMENT/subset shape (the FIRST universal 'every required item is satisfied' test in this fleet) for a SECOND domain |
+| `src/casework/facts.kotoba` | Per-jurisdiction welfare-eligibility/social-work catalog with an official spec-basis citation per entry, honest coverage reporting |
+| `src/casework/caseworkopsllm.kotoba` | **CaseworkOps-LLM Advisor** -- `mock-advisor` ‖ `llm-advisor`; intake/assessment/risk-screening/eligibility-determination/referral proposals |
+| `src/casework/governor.kotoba` | **Social Services Governor** -- 4 HARD checks (spec-basis · evidence-incomplete · eligibility-criteria-unsatisfied, pure ground-truth set-containment recompute · risk-flag-unresolved, unconditional evaluation, the FIFTEENTH grounding of this discipline) + already-eligibility-finalized/already-referral-finalized guards + 1 soft (confidence/actuation gate) |
+| `src/casework/phase.kotoba` | **Phase 0→3** -- read-only → assisted intake → assisted assess → supervised (both finalizations always human; case intake is the ONLY auto-eligible op, no direct capital risk) |
+| `src/casework/operation.kotoba` | **OperationActor** -- langgraph-clj StateGraph |
+| `src/casework/sim.kotoba` | demo driver |
 | `test/casework/*_test.clj` | governor contract · phase invariants · store parity · registry conformance · facts coverage |
 
 ## Business-process coverage (honest)

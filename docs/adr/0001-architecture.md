@@ -158,7 +158,7 @@ special form); every reference across `casework.governor`/
   family, reused for a domain with no academic-curriculum concept at
   all.
 - (+) The actuation invariant (governor + phase, two layers) is
-  regression-tested by `test/casework/phase_test.clj`'s `eligibility-
+  regression-tested by `test/casework/phase_test.kotoba`'s `eligibility-
   finalize-never-auto-at-any-phase`/`referral-finalize-never-auto-at-
   any-phase`.
 - (+) `MemStore` ‖ `DatomicStore` parity is proven by `test/casework/
