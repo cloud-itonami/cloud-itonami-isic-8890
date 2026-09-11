@@ -502,7 +502,7 @@
      ;; -- cases ---------------------------------------------------------
      "  <section class=\"card\">\n"
      "    <h2>Cases — " (count cases) " seeded</h2>\n"
-     "    <p class=\"muted\">Demo snapshot, build-time-generated from <code>casework.store</code> via <code>casework.render-html</code> (<code>clojure -M:dev:render-html</code>). The eligibility-criteria, lifecycle and status columns are the actor's own committed writes, not a hand-typed summary. Client names are the fixtures in <code>casework.store/demo-data</code>; no real client record appears on this page.</p>\n"
+     "    <p class=\"muted\">Demo snapshot, build-time-generated from <code>casework.store</code> via <code>casework.render-html</code> (<code>kbb -M:dev:render-html</code>). The eligibility-criteria, lifecycle and status columns are the actor's own committed writes, not a hand-typed summary. Client names are the fixtures in <code>casework.store/demo-data</code>; no real client record appears on this page.</p>\n"
      "    <table>\n"
      "      <thead><tr><th>Case</th><th>Client</th><th>Jurisdiction</th><th>Criteria satisfied</th><th>Risk flag</th><th>Lifecycle</th><th>Last op status</th></tr></thead>\n"
      "      <tbody>\n"
