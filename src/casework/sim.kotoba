@@ -1,5 +1,5 @@
 (ns casework.sim
-  "Demo driver -- `clojure -M:dev:run`. Walks a clean case through
+  "Demo driver -- `kbb -M:dev:run`. Walks a clean case through
   intake -> jurisdiction assessment -> risk screening -> eligibility-
   determination proposal (always escalates) -> human approval ->
   commit, then through referral proposal (always escalates) -> human
