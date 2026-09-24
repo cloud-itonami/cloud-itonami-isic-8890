@@ -1,0 +1,33 @@
+;; What this vertical's robot physically does, declared for
+;; kotoba.robotics.process (kotoba-lang/robotics). `kbb -M:dev:physics` runs it.
+;;
+;; README "Robotics premise": a document-courier robot handles physical
+;; casework-file handoff for other social work without accommodation
+;; (ISIC 8890). Its physical work: carrying crates of casework files between
+;; the intake office and the team rooms, and lifting file boxes into the
+;; locked casework cabinets.
+;;
+;; Every number without a cited source is marked `estimate` in its :basis.
+;; Replacing an estimate with a sourced value is this bot's growth work.
+{:physics/schema "itonami.physical-ai.spec.v1"
+ :repo "cloud-itonami/cloud-itonami-isic-8890"
+ :cases
+ [{:id :casework-crate-courier
+   :kind :transport
+   :procedure "courier robot carries a crate of casework files from the intake office to a team room through the office's corridor ramp"
+   :params {:mass-kg 40.0 :distance-m 50.0 :v-max-mps 1.0 :a-max-mps2 0.5
+            :brake-decel-mps2 0.8 :drive-force-n 100.0 :crr 0.02 :slope-deg 3.0
+            :cog-height-m 0.50 :support-half-length-m 0.25 :max-time-s 3000.0}
+   :sweep {:param :payload-kg :values [5.0 10.0 20.0 30.0 40.0]}
+   :quantity :cycle-time-s
+   :limit {:max 90.0 :basis "estimate: intake-to-team-room leg within the office's 5-minute file-handoff target"}
+   :boundary {:lo 1.0 :hi 150.0}}
+  {:id :file-box-to-cabinet
+   :kind :manipulator
+   :procedure "arm lifts a casework file box from the courier into the upper drawer of a locked cabinet"
+   :params {:l1-m 0.45 :l2-m 0.40 :m1-kg 3.5 :m2-kg 2.5
+            :from [0.50 0.10] :to [0.35 0.60] :duration-s 2.5 :steps 500}
+   :sweep {:param :payload-kg :values [1.0 3.0 5.0 7.0 9.0]}
+   :quantity :peak-tau1-nm
+   :limit {:max 60.0 :basis "estimate: continuous shoulder torque of a light (~5 kg class) collaborative arm"}
+   :boundary {:lo 0.5 :hi 25.0}}]}
